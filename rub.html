@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rubik is Here</title>
+	<style type="text/css">
+		.view{
+			width: 200px;
+			min-height: 200px;
+			perspective:300px;
+			margin:auto;
+			margin-top: 400px;
+		}
+	.cube{
+		width: 250%;
+		height:100%;
+		position:relative;
+		transform-style: preserve-3d;
+		transform:translateX(50px) translateY(50px) rotate3d(1, 2, 1, 45deg);
+		/*-webkit-animation: rotate 3s infinite linear;*/
+		/*animation*/
+		/*animation-duration: 3s;
+		animation-name:rotate;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;*/
+		animation:rotate 10s infinite linear;
+			}
+	@keyframes rotate{
+		from,to{
+			transform: rotateY(-360deg)translateX(50px)translateY(50px)rotate3d(1, 2, 1, 45deg);
+						width: 100%;
+	}
+	to{
+		transform:rotateY(0deg)translateX(50px)translateY(50px)rotate3d(1, 2, 1, 45deg);		
+				width: 100%; 
+			}
+		}
+	.front{
+		transform:rotateY(0deg)translateZ(50px);
+	}
+	.face{
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		background:transparent;
+		border: 1px solid #fff;
+		text-align: center;
+		line-height: 100px;
+		backface-visibility: hidden;
+	}
+
+	.front{
+		transform:rotateY(0deg)translateZ(50px);
+	}
+	.right{
+		transform:rotateY(90deg)translateZ(50px);
+	}
+	.back{transform:rotateY(180deg)translateZ(50px);}
+	.left{transform:rotateY(-90deg)translateZ(50px);}
+	.top{transform:rotateX(90deg)translateZ(50px);}
+	.bottom{
+		transform:rotateX(-90deg)translateZ(50px);
+	}
+	.cell1, .cell2, .cell3, .cell4, .cell5, .cell6, .cell7, .cell8, .cell9{
+		width: 33.33px;	
+		height:33.33px;
+		box-sizing: border-box;
+		float: left;
+		border:2px solid #fff;
+		border-radius: 5px;
+	}
+		.cell1{
+			background:#f00;
+		}
+		.cell2{
+			background:yellow;
+		}
+		.cell3{
+			background-color:#00f;
+		}
+		.cell4{
+			background:#fff;
+		}
+		.cell5{
+			background-color: #ffa500;
+		}
+		.cell6{
+			background-color:green;
+		}
+				
+	</style>
+</head>
+<body>
+	<div class="view">
+	<div class="cube">
+	 	<div class="face front">
+			<div class="cell1"></div>
+			<div class="cell2"></div>
+			<div class="cell1"></div>
+			<div class="cell4"></div>
+			<div class="cell5"></div>
+			<div class="cell6"></div>
+			<div class="cell3"></div>
+			<div class="cell4"></div>
+			<div class="cell1"></div>
+			</div>
+		<div class="face back">
+			<div class="cell2"></div>
+			<div class="cell1"></div>
+			<div class="cell1"></div>
+			<div class="cell2"></div>
+			<div class="cell3"></div>
+			<div class="cell1"></div>
+			<div class="cell6"></div>
+			<div class="cell6"></div>
+			<div class="cell6"></div>
+			</div>
+		<div class="face right">
+			<div class="cell2"></div>
+			<div class="cell1"></div>
+			<div class="cell2"></div>
+			<div class="cell6"></div>
+			<div class="cell4"></div>
+			<div class="cell1"></div>
+			<div class="cell1"></div>
+			<div class="cell2"></div>
+			<div class="cell1"></div>
+			</div>
+		<div class="face left">
+			<div class="cell3"></div>
+			<div class="cell3"></div>
+			<div class="cell3"></div>
+			<div class="cell6"></div>
+			<div class="cell4"></div>
+			<div class="cell6"></div>
+			<div class="cell1"></div>
+			<div class="cell5"></div>
+			<div class="cell1"></div>
+			</div>
+		<div class="face top">
+			<div class="cell5"></div>
+			<div class="cell5"></div>
+			<div class="cell1"></div>
+			<div class="cell2"></div>
+			<div class="cell3"></div>
+			<div class="cell1"></div>
+			<div class="cell1"></div>
+			<div class="cell5"></div>
+			<div class="cell6"></div>
+			</div>
+		<div class="face botom">
+			<div class="cell2"></div>
+			<div class="cell1"></div>
+			<div class="cell2"></div>
+			<div class="cell6"></div>
+			<div class="cell4"></div>
+			<div class="cell1"></div>
+			<div class="cell5"></div>
+			<div class="cell6"></div>
+			<div class="cell6"></div>
+			</div>
+		</div>
+		
+	</div>
+
+</body>
+</html>
